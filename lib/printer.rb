@@ -1,4 +1,4 @@
-require 'history'
+require_relative './history'
 
 class Printer
   attr_reader :history
@@ -7,6 +7,8 @@ class Printer
   end
 
   def display
-    @history.record
+    puts " date || credit || debit || balance ||" + "\n"
+    @history.record.each{|x| print x + " || ";} 
+    puts "\n"
   end
 end

@@ -12,29 +12,31 @@ describe BankAccount do
 
   describe 'credit with amount' do
     it 'will add amount to balance' do
-      expect(acc.credit(5.50)).to eq 5.50
+      acc.credit(5.50)
+      expect(acc.balance).to eq 5.50
     end
   end
 
     describe 'debit with amount' do
     it 'will remove amount from balance' do
       acc.credit(5.00)
-      expect(acc.debit(3.50)).to eq 1.50
+      acc.debit(3.50)
+      expect(acc.balance).to eq 1.50
       end
     end
 
     describe 'record is inserted' do
       it 'will show the record' do
         acc.credit(5.00)
-        expect(acc.history.record).to include "5.00"
+        expect(acc.display).to include "5.00"
       end
     end
 
-    #   describe 'printer' do
-    #   it 'will print the record' do
-    #     acc.credit(5.00)
-    #     expect(acc.display).to include "5.00"
-    #   end
-    # end
-    
+      describe 'printer' do
+      it 'will print the record' do
+        acc.credit(5.00)
+        expect(acc.display).to include "5.00"
+      end
+    end
+
 end

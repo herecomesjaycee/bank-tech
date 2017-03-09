@@ -1,22 +1,23 @@
-require 'history'
+require_relative './history'
+require_relative './printer'
 
 class BankAccount
-  attr_reader :balance, :history, :printer
+  attr_reader :balance, :printer
 
-  def initialize(balance=0, printer=Printer.new(history=History.new))
+  def initialize(balance=0, printer=Printer.new)
     @balance = balance
     @printer = printer
-    @history = history
   end
 
   def credit(amount)
-    @history.record.push(datestamp, stringify(amount), "", @balance)
     @balance += amount
+    @printer.history.record.push(datestamp, stringify(amount), "", stringify(@balance))
+    
   end
 
   def debit(amount)
-    @history.record.push(datestamp, "", stringify(amount), @balance)
     @balance -= amount
+    @printer.history.record.push(datestamp, "", stringify(amount), stringify(@balance))
   end
 
   def display

@@ -7,7 +7,7 @@ describe Printer do
 
   describe 'printer functionality' do
     it 'can display history' do
-      expect(printer.display).to eq []
+      expect(printer.history.record).to eq []
     end 
 
   end
