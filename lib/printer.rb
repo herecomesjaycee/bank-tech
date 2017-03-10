@@ -8,7 +8,6 @@ class Printer
 
   def display
     puts " date || credit || debit || balance ||" + "\n"
-    @history.record.each{|x| print x + " || ";} 
-    puts "\n"
+    @history.record.each{|x| print x + " || ";}   
   end
 end
