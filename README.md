@@ -1,9 +1,11 @@
-#Bank tech test
+Bank tech test
+========
 This is the solution created for the specification below, an exercise to practice OO design and TDD skills. 
 
-##Specification
+Specification
+---------
 
-###Requirements
+### Requirements
 
 - You should be able to interact with the your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
 - Deposits, withdrawal.
